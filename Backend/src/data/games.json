@@ -48,5 +48,103 @@
     ],
     "userId": "e028cbf5-0449-4b2c-839a-56ee29925aa9",
     "usuario": "Administrador"
+  },
+  {
+    "id": "3feb96f9-07b8-4bd3-9be2-41de5c0377d7",
+    "categoria": "Informática y programación",
+    "cantidadPreguntas": 5,
+    "preguntasRespondidas": 5,
+    "puntaje": 50,
+    "respuestasCorrectas": 5,
+    "respuestasIncorrectas": 0,
+    "mejorRacha": 5,
+    "duracion": 28303,
+    "fechaInicio": "2026-11-23T22:34:48.000Z",
+    "fechaFinalizacion": "2026-11-23T22:35:16.303Z",
+    "respuestas": [
+      {
+        "preguntaId": 53,
+        "enunciado": "¿Qué es una variable en programación?",
+        "opciones": [
+          "Una instrucción que siempre se repite",
+          "Un espacio identificado para almacenar un valor",
+          "Un tipo de conexión de red",
+          "Un error de sintaxis"
+        ],
+        "respuestaSeleccionada": 1,
+        "respuestaSeleccionadaTexto": "Un espacio identificado para almacenar un valor",
+        "respuestaCorrecta": 1,
+        "respuestaCorrectaTexto": "Un espacio identificado para almacenar un valor",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 46,
+        "enunciado": "¿Qué significa la sigla IP en una red informática?",
+        "opciones": [
+          "Internet Program",
+          "Internal Process",
+          "Internet Protocol",
+          "Integrated Platform"
+        ],
+        "respuestaSeleccionada": 2,
+        "respuestaSeleccionadaTexto": "Internet Protocol",
+        "respuestaCorrecta": 2,
+        "respuestaCorrectaTexto": "Internet Protocol",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 47,
+        "enunciado": "¿Qué lenguaje se utiliza principalmente para estructurar el contenido de una página web?",
+        "opciones": [
+          "HTML",
+          "SQL",
+          "Python",
+          "Bash"
+        ],
+        "respuestaSeleccionada": 0,
+        "respuestaSeleccionadaTexto": "HTML",
+        "respuestaCorrecta": 0,
+        "respuestaCorrectaTexto": "HTML",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 60,
+        "enunciado": "¿Qué servicio traduce nombres de dominio, como ejemplo.com, a direcciones IP?",
+        "opciones": [
+          "FTP",
+          "DNS",
+          "HTML",
+          "CSS"
+        ],
+        "respuestaSeleccionada": 1,
+        "respuestaSeleccionadaTexto": "DNS",
+        "respuestaCorrecta": 1,
+        "respuestaCorrectaTexto": "DNS",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 48,
+        "enunciado": "¿Para qué se utiliza SQL principalmente?",
+        "opciones": [
+          "Editar imágenes",
+          "Consultar y administrar datos en bases de datos",
+          "Diseñar redes físicas",
+          "Comprimir archivos"
+        ],
+        "respuestaSeleccionada": 1,
+        "respuestaSeleccionadaTexto": "Consultar y administrar datos en bases de datos",
+        "respuestaCorrecta": 1,
+        "respuestaCorrectaTexto": "Consultar y administrar datos en bases de datos",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      }
+    ],
+    "estado": "completada",
+    "userId": "48cea300-cf2e-4b72-a3f9-8b51d29b1fe3",
+    "usuario": "alessio"
   }
 ]

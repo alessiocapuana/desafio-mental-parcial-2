@@ -14,5 +14,13 @@
     "password": "$2b$10$6v/HTG6LPSGxKOMcBb5skeqZdLUrKNKMAXPAnlmT1WCeCEPcWSHRq",
     "role": "USER",
     "createdAt": "2026-11-23T20:28:13.097Z"
+  },
+  {
+    "id": "48cea300-cf2e-4b72-a3f9-8b51d29b1fe3",
+    "name": "alessio",
+    "email": "alessio@gmail.com",
+    "password": "$2b$10$ZgFGWQI89Rbc67VSR0DEn.rOrji4JDGAayQqhvWRHzu.ME8z6uLhG",
+    "role": "USER",
+    "createdAt": "2026-11-23T22:34:19.341Z"
   }
 ]
