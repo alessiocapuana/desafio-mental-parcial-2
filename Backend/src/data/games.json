@@ -1,0 +1,52 @@
+[
+  {
+    "id": "c9125803-b113-47b3-8aad-882e355115e0",
+    "categoria": "Geografía",
+    "cantidadPreguntas": 2,
+    "preguntasRespondidas": 2,
+    "puntaje": 10,
+    "respuestasCorrectas": 1,
+    "respuestasIncorrectas": 1,
+    "mejorRacha": 1,
+    "duracion": 14500,
+    "fechaInicio": "2026-11-23T21:00:00.000Z",
+    "fechaFinalizacion": "2026-11-23T21:00:14.500Z",
+    "estado": "completada",
+    "respuestas": [
+      {
+        "preguntaId": 31,
+        "enunciado": "¿Cuál es la capital de Australia?",
+        "opciones": [
+          "Sídney",
+          "Canberra",
+          "Melbourne",
+          "Perth"
+        ],
+        "respuestaSeleccionada": 1,
+        "respuestaSeleccionadaTexto": "Canberra",
+        "respuestaCorrecta": 1,
+        "respuestaCorrectaTexto": "Canberra",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 32,
+        "enunciado": "¿Cuál es el océano más grande del planeta?",
+        "opciones": [
+          "Atlántico",
+          "Índico",
+          "Ártico",
+          "Pacífico"
+        ],
+        "respuestaSeleccionada": 0,
+        "respuestaSeleccionadaTexto": "Atlántico",
+        "respuestaCorrecta": 3,
+        "respuestaCorrectaTexto": "Pacífico",
+        "resultado": "incorrecta",
+        "puntajeObtenido": 0
+      }
+    ],
+    "userId": "e028cbf5-0449-4b2c-839a-56ee29925aa9",
+    "usuario": "Administrador"
+  }
+]

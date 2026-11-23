@@ -1,0 +1,782 @@
+[
+  {
+    "id": 1,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿En qué año llegó Cristóbal Colón a América?",
+    "opciones": [
+      "1492",
+      "1453",
+      "1512",
+      "1601"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 2,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Qué civilización construyó las pirámides de Guiza?",
+    "opciones": [
+      "Romana",
+      "Egipcia",
+      "Griega",
+      "Maya"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 3,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿En qué país comenzó el Renacimiento?",
+    "opciones": [
+      "Francia",
+      "España",
+      "Italia",
+      "Alemania"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 4,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién escribió Don Quijote de la Mancha?",
+    "opciones": [
+      "Federico García Lorca",
+      "Miguel de Cervantes",
+      "Lope de Vega",
+      "Pablo Neruda"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 5,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿En qué año se declaró la independencia argentina?",
+    "opciones": [
+      "1810",
+      "1812",
+      "1816",
+      "1820"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 6,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Qué muro cayó en 1989 y simbolizó un cambio en Europa?",
+    "opciones": [
+      "Muro de Adriano",
+      "Gran Muralla",
+      "Muro de Berlín",
+      "Muro de las Lamentaciones"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 7,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién pintó la Mona Lisa?",
+    "opciones": [
+      "Vincent van Gogh",
+      "Leonardo da Vinci",
+      "Pablo Picasso",
+      "Claude Monet"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 8,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿En qué civilización surgieron los Juegos Olímpicos antiguos?",
+    "opciones": [
+      "Griega",
+      "Persa",
+      "Egipcia",
+      "Fenicia"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 9,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién fue el primer ser humano en pisar la Luna?",
+    "opciones": [
+      "Yuri Gagarin",
+      "Buzz Aldrin",
+      "Neil Armstrong",
+      "John Glenn"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 10,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Cuál era la lengua principal de la antigua Roma?",
+    "opciones": [
+      "Griego",
+      "Latín",
+      "Hebreo",
+      "Árabe"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 11,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién escribió Romeo y Julieta?",
+    "opciones": [
+      "William Shakespeare",
+      "Charles Dickens",
+      "Oscar Wilde",
+      "Jane Austen"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 12,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Qué movimiento artístico se asocia con Salvador Dalí?",
+    "opciones": [
+      "Impresionismo",
+      "Cubismo",
+      "Surrealismo",
+      "Barroco"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 13,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Qué acontecimiento inició la Revolución francesa en 1789?",
+    "opciones": [
+      "La toma de la Bastilla",
+      "La caída de Roma",
+      "La batalla de Waterloo",
+      "La firma de la Carta Magna"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 14,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién compuso la Novena Sinfonía?",
+    "opciones": [
+      "Mozart",
+      "Beethoven",
+      "Bach",
+      "Chopin"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 15,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Cuál de estas obras pertenece a Gabriel García Márquez?",
+    "opciones": [
+      "Ficciones",
+      "Rayuela",
+      "Cien años de soledad",
+      "Martín Fierro"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 16,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué órgano bombea la sangre por el cuerpo?",
+    "opciones": [
+      "Pulmón",
+      "Hígado",
+      "Corazón",
+      "Riñón"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 17,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué gas absorben principalmente las plantas durante la fotosíntesis?",
+    "opciones": [
+      "Oxígeno",
+      "Dióxido de carbono",
+      "Nitrógeno",
+      "Hidrógeno"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 18,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es el planeta más cercano al Sol?",
+    "opciones": [
+      "Venus",
+      "Tierra",
+      "Marte",
+      "Mercurio"
+    ],
+    "respuestaCorrecta": 3,
+    "puntaje": 10
+  },
+  {
+    "id": 19,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es la fórmula química del agua?",
+    "opciones": [
+      "CO2",
+      "H2O",
+      "O2",
+      "NaCl"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 20,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué fuerza nos mantiene sobre la superficie terrestre?",
+    "opciones": [
+      "Magnetismo",
+      "Fricción",
+      "Gravedad",
+      "Electricidad"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 21,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es el animal terrestre más grande en la actualidad?",
+    "opciones": [
+      "Rinoceronte blanco",
+      "Jirafa",
+      "Elefante africano",
+      "Hipopótamo"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 22,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué parte de la célula contiene la mayor parte del ADN?",
+    "opciones": [
+      "Núcleo",
+      "Membrana",
+      "Citoplasma",
+      "Ribosoma"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 23,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿A qué temperatura hierve el agua al nivel del mar?",
+    "opciones": [
+      "50 °C",
+      "90 °C",
+      "100 °C",
+      "120 °C"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 24,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué vitamina puede producir el cuerpo con ayuda de la luz solar?",
+    "opciones": [
+      "Vitamina A",
+      "Vitamina C",
+      "Vitamina D",
+      "Vitamina B12"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 25,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cómo se llama el cambio de estado de líquido a gas?",
+    "opciones": [
+      "Condensación",
+      "Solidificación",
+      "Evaporación",
+      "Fusión"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 26,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué tipo de animal es una rana?",
+    "opciones": [
+      "Reptil",
+      "Anfibio",
+      "Mamífero",
+      "Pez"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 27,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es la estrella más cercana a la Tierra?",
+    "opciones": [
+      "Sirio",
+      "Próxima Centauri",
+      "El Sol",
+      "Betelgeuse"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 28,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué instrumento mide la presión atmosférica?",
+    "opciones": [
+      "Termómetro",
+      "Barómetro",
+      "Anemómetro",
+      "Higrómetro"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 29,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué molécula transporta gran parte del oxígeno en la sangre?",
+    "opciones": [
+      "Insulina",
+      "Hemoglobina",
+      "Colágeno",
+      "Queratina"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 30,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué capa de la atmósfera contiene la mayor parte del ozono atmosférico?",
+    "opciones": [
+      "Troposfera",
+      "Estratosfera",
+      "Mesosfera",
+      "Exosfera"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 31,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la capital de Australia?",
+    "opciones": [
+      "Sídney",
+      "Canberra",
+      "Melbourne",
+      "Perth"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 32,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es el océano más grande del planeta?",
+    "opciones": [
+      "Atlántico",
+      "Índico",
+      "Ártico",
+      "Pacífico"
+    ],
+    "respuestaCorrecta": 3,
+    "puntaje": 10
+  },
+  {
+    "id": 33,
+    "categoria": "Geografía",
+    "enunciado": "¿En qué continente se encuentra Egipto?",
+    "opciones": [
+      "Asia",
+      "África",
+      "Europa",
+      "América"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 34,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la capital de Japón?",
+    "opciones": [
+      "Kioto",
+      "Osaka",
+      "Tokio",
+      "Hiroshima"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 35,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué cordillera recorre gran parte del oeste de América del Sur?",
+    "opciones": [
+      "Los Alpes",
+      "Los Andes",
+      "El Himalaya",
+      "Los Urales"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 36,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es el país más extenso del mundo por superficie?",
+    "opciones": [
+      "Canadá",
+      "China",
+      "Estados Unidos",
+      "Rusia"
+    ],
+    "respuestaCorrecta": 3,
+    "puntaje": 10
+  },
+  {
+    "id": 37,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué río atraviesa la ciudad de París?",
+    "opciones": [
+      "Támesis",
+      "Sena",
+      "Danubio",
+      "Rin"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 38,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la capital de Uruguay?",
+    "opciones": [
+      "Asunción",
+      "Santiago",
+      "Montevideo",
+      "La Paz"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 39,
+    "categoria": "Geografía",
+    "enunciado": "¿En qué continente se encuentra el desierto del Sahara?",
+    "opciones": [
+      "África",
+      "Asia",
+      "Oceanía",
+      "América del Sur"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 40,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué línea imaginaria divide la Tierra en hemisferios norte y sur?",
+    "opciones": [
+      "Meridiano de Greenwich",
+      "Trópico de Cáncer",
+      "Ecuador",
+      "Círculo polar ártico"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 41,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la capital de Canadá?",
+    "opciones": [
+      "Toronto",
+      "Vancouver",
+      "Montreal",
+      "Ottawa"
+    ],
+    "respuestaCorrecta": 3,
+    "puntaje": 10
+  },
+  {
+    "id": 42,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué país europeo tiene forma aproximada de bota?",
+    "opciones": [
+      "Grecia",
+      "Italia",
+      "Portugal",
+      "Noruega"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 43,
+    "categoria": "Geografía",
+    "enunciado": "¿En qué país se encuentra Machu Picchu?",
+    "opciones": [
+      "Bolivia",
+      "México",
+      "Perú",
+      "Ecuador"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 44,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la montaña más alta del mundo sobre el nivel del mar?",
+    "opciones": [
+      "Aconcagua",
+      "Kilimanjaro",
+      "Everest",
+      "Mont Blanc"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 45,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué estrecho separa España de Marruecos?",
+    "opciones": [
+      "Estrecho de Bering",
+      "Estrecho de Gibraltar",
+      "Canal de la Mancha",
+      "Estrecho de Magallanes"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 46,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué significa la sigla IP en una red informática?",
+    "opciones": [
+      "Internet Program",
+      "Internal Process",
+      "Internet Protocol",
+      "Integrated Platform"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 47,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué lenguaje se utiliza principalmente para estructurar el contenido de una página web?",
+    "opciones": [
+      "HTML",
+      "SQL",
+      "Python",
+      "Bash"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 48,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Para qué se utiliza SQL principalmente?",
+    "opciones": [
+      "Editar imágenes",
+      "Consultar y administrar datos en bases de datos",
+      "Diseñar redes físicas",
+      "Comprimir archivos"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 49,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué estructura de programación permite ejecutar un bloque según una condición?",
+    "opciones": [
+      "if",
+      "import",
+      "return",
+      "print"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 50,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué representa una clave primaria en una tabla de base de datos?",
+    "opciones": [
+      "Un campo que identifica cada registro de forma única",
+      "La contraseña del usuario",
+      "Una copia de la tabla",
+      "Un campo que siempre guarda texto"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 51,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Cuál de estos lenguajes se ejecuta habitualmente en el navegador para agregar interactividad web?",
+    "opciones": [
+      "JavaScript",
+      "SQL",
+      "C",
+      "R"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 52,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué método HTTP se utiliza normalmente para solicitar la lectura de un recurso?",
+    "opciones": [
+      "DELETE",
+      "GET",
+      "PATCH",
+      "TRACE"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 53,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué es una variable en programación?",
+    "opciones": [
+      "Una instrucción que siempre se repite",
+      "Un espacio identificado para almacenar un valor",
+      "Un tipo de conexión de red",
+      "Un error de sintaxis"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 54,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué significa que una dirección IP sea privada?",
+    "opciones": [
+      "Que solo puede tener letras",
+      "Que se usa dentro de una red privada y no se enruta directamente por Internet",
+      "Que nunca puede cambiar",
+      "Que pertenece siempre a un servidor web"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 55,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué instrucción SQL permite recuperar datos de una tabla?",
+    "opciones": [
+      "SELECT",
+      "INSERT",
+      "UPDATE",
+      "DROP"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 56,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué es un algoritmo?",
+    "opciones": [
+      "Un dispositivo físico",
+      "Una secuencia de pasos para resolver un problema",
+      "Un lenguaje exclusivo de bases de datos",
+      "Un sistema operativo"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 57,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué propiedad de CSS controla el espacio interior de un elemento?",
+    "opciones": [
+      "margin",
+      "padding",
+      "border",
+      "display"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 58,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué función cumple una clave foránea en una base de datos relacional?",
+    "opciones": [
+      "Relaciona registros con una clave de otra tabla",
+      "Ordena automáticamente todos los datos",
+      "Encripta cada columna",
+      "Elimina las tablas duplicadas"
+    ],
+    "respuestaCorrecta": 0,
+    "puntaje": 10
+  },
+  {
+    "id": 59,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué tipo de dato representa true o false?",
+    "opciones": [
+      "String",
+      "Boolean",
+      "Array",
+      "Float"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 60,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué servicio traduce nombres de dominio, como ejemplo.com, a direcciones IP?",
+    "opciones": [
+      "FTP",
+      "DNS",
+      "HTML",
+      "CSS"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  }
+]

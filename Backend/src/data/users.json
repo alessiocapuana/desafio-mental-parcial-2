@@ -1,0 +1,18 @@
+[
+  {
+    "id": "e028cbf5-0449-4b2c-839a-56ee29925aa9",
+    "name": "Administrador",
+    "email": "admin@admin.com",
+    "password": "$2b$10$PtTBn2lEcuV/ItPnDs6mCORLTQRuDCFcMmWecba5eAvyYsGIQLAkK",
+    "role": "ADMIN",
+    "createdAt": "2026-11-23T20:20:52.655Z"
+  },
+  {
+    "id": "c9a542fc-e0d8-4d15-b5c9-c4ed97d1d10d",
+    "name": "Juan Perez",
+    "email": "juan@gmail.com",
+    "password": "$2b$10$6v/HTG6LPSGxKOMcBb5skeqZdLUrKNKMAXPAnlmT1WCeCEPcWSHRq",
+    "role": "USER",
+    "createdAt": "2026-11-23T20:28:13.097Z"
+  }
+]
