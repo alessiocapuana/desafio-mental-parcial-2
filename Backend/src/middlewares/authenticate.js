@@ -2,19 +2,19 @@ import { verifyToken } from "../utils/jwt.js";
 
 export const authenticate = (req, res, next) => {
   const authHeader = req.headers.authorization;
-  
-  if (!authHeader) {
-    return res.status(401).json({ message: "No token provided" });
+
+  // El token tiene que venir como "Bearer eyJhbGci..."
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "No se envió el token de autenticación" });
   }
 
-  // El token suele venir como "Bearer eyJhbGci..." así que lo separamos
-  const token = authHeader.split(" ")[1]; 
-  
+  const token = authHeader.split(" ")[1];
+
   try {
     const decodedUser = verifyToken(token);
     req.user = decodedUser; // Guardamos los datos del usuario en la request para usarlos después
     next();
   } catch (error) {
-    return res.status(401).json({ message: "Invalid or expired token" });
+    return res.status(401).json({ message: "La sesión es inválida o expiró. Volvé a iniciar sesión." });
   }
 };

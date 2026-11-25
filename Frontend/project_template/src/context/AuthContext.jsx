@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { api } from "../services/api";
+import { api, SESSION_EXPIRED_EVENT } from "../services/api";
 
 const AuthContext = createContext(null);
 
@@ -27,6 +27,17 @@ export function AuthProvider({ children }) {
     }
 
     recoverSession();
+  }, []);
+
+  // Si el token vence durante el uso, se cierra la sesión y
+  // ProtectedRoute redirige automáticamente al login
+  useEffect(() => {
+    function handleSessionExpired() {
+      setUser(null);
+    }
+    window.addEventListener(SESSION_EXPIRED_EVENT, handleSessionExpired);
+    return () =>
+      window.removeEventListener(SESSION_EXPIRED_EVENT, handleSessionExpired);
   }, []);
 
   async function login(email, password) {

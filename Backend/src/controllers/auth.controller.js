@@ -1,4 +1,5 @@
 import { AuthModel } from "../models/auth.model.js";
+import { UserModel } from "../models/user.model.js";
 
 export class AuthController {
   static async login(req, res) {
@@ -19,11 +20,19 @@ export class AuthController {
       return res.status(409).json({ message: "El email ya está registrado" });
     }
 
-    res.status(201).json(user);
+    // Se devuelve el usuario sin el hash de la contraseña
+    res.status(201).json(UserModel.toPublic(user));
   }
 
   static async profile(req, res) {
-    // req.user ya viene con los datos limpios gracias al middleware 'authenticate'
-    res.status(200).json(req.user);
+    try {
+      const user = await UserModel.getById(req.user.id);
+      if (!user) {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+      }
+      res.status(200).json(UserModel.toPublic(user));
+    } catch (error) {
+      res.status(500).json({ message: "Error al obtener el perfil" });
+    }
   }
 }

@@ -2,6 +2,17 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import { api } from "../services/api";
 
+const TIEMPO_POR_PREGUNTA = 15;
+const PAUSA_ENTRE_PREGUNTAS = 2000;
+
+const MARCADOR_INICIAL = {
+  puntaje: 0,
+  correctas: 0,
+  incorrectas: 0,
+  rachaActual: 0,
+  mejorRacha: 0,
+};
+
 export function GamePage() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -11,161 +22,142 @@ export function GamePage() {
   const cantidad = location.state?.cantidad || 0;
 
   const [indiceActual, setIndiceActual] = useState(0);
-  const [puntaje, setPuntaje] = useState(0);
-  const [correctas, setCorrectas] = useState(0);
-  const [incorrectas, setIncorrectas] = useState(0);
-  const [rachaActual, setRachaActual] = useState(0);
-  const [mejorRacha, setMejorRacha] = useState(0);
-  const [tiempoRestante, setTiempoRestante] = useState(15);
+  const [marcador, setMarcador] = useState(MARCADOR_INICIAL);
+  const [tiempoRestante, setTiempoRestante] = useState(TIEMPO_POR_PREGUNTA);
   const [opcionSeleccionada, setOpcionSeleccionada] = useState(undefined);
   const [respondida, setRespondida] = useState(false);
+  const [validando, setValidando] = useState(false);
+  // Resultado que devuelve el servidor para la pregunta actual
+  const [resultado, setResultado] = useState(null);
+  const [errorValidacion, setErrorValidacion] = useState("");
   const [guardando, setGuardando] = useState(false);
+  const [errorGuardado, setErrorGuardado] = useState("");
 
   const tiempoInicioRef = useRef(Date.now());
+  // Solo se guarda lo que eligió el jugador; los resultados los calcula el servidor
   const respuestasRef = useRef([]);
   const avanceTimeoutRef = useRef(null);
   const finalizadoRef = useRef(false);
+  // Evita responder dos veces la misma pregunta (clic + fin del tiempo, etc.)
+  const respondiendoRef = useRef(false);
+  const payloadFinalRef = useRef(null);
 
-  const finalizarYGuardar = useCallback(
-    async ({
-      puntajeFinal,
-      correctasFinal,
-      incorrectasFinal,
-      mejorRachaFinal,
-    }) => {
-      if (finalizadoRef.current) return;
-      finalizadoRef.current = true;
-      setGuardando(true);
-
-      const fechaFinalizacion = new Date();
-      const duracionTotal =
-        fechaFinalizacion.getTime() - tiempoInicioRef.current;
-      const preguntasRespondidas = correctasFinal + incorrectasFinal;
-
-      const partidaPayload = {
-        categoria,
-        cantidadPreguntas: preguntas.length,
-        preguntasRespondidas,
-        puntaje: puntajeFinal,
-        respuestasCorrectas: correctasFinal,
-        respuestasIncorrectas: incorrectasFinal,
-        mejorRacha: mejorRachaFinal,
-        duracion: duracionTotal,
-        fechaInicio: new Date(tiempoInicioRef.current).toISOString(),
-        fechaFinalizacion: fechaFinalizacion.toISOString(),
-        respuestas: respuestasRef.current,
-        estado: "completada",
-      };
-
-      try {
-        await api.saveGame(partidaPayload);
-      } catch (err) {
-        console.error("Error al guardar la partida:", err);
-      }
-
+  const guardarPartidaCompletada = useCallback(async () => {
+    setGuardando(true);
+    setErrorGuardado("");
+    try {
+      const partidaGuardada = await api.saveGame(payloadFinalRef.current);
       navigate("/resultados", {
         replace: true,
         state: {
-          partida: partidaPayload,
+          partida: partidaGuardada,
           config: { categoria, cantidad },
         },
       });
-    },
-    [categoria, cantidad, navigate, preguntas.length]
-  );
+    } catch (err) {
+      setErrorGuardado(
+        err.message || "No se pudo guardar la partida en el servidor."
+      );
+      setGuardando(false);
+    }
+  }, [categoria, cantidad, navigate]);
+
+  const finalizarPartida = useCallback(() => {
+    if (finalizadoRef.current) return;
+    finalizadoRef.current = true;
+
+    payloadFinalRef.current = {
+      categoria,
+      cantidadPreguntas: preguntas.length,
+      fechaInicio: new Date(tiempoInicioRef.current).toISOString(),
+      fechaFinalizacion: new Date().toISOString(),
+      respuestas: respuestasRef.current,
+      estado: "completada",
+    };
+
+    guardarPartidaCompletada();
+  }, [categoria, preguntas.length, guardarPartidaCompletada]);
 
   const responderPregunta = useCallback(
-    (indiceOpcion) => {
-      if (respondida || finalizadoRef.current || preguntas.length === 0) return;
+    async (indiceOpcion) => {
+      if (
+        respondiendoRef.current ||
+        finalizadoRef.current ||
+        preguntas.length === 0
+      ) {
+        return;
+      }
+      respondiendoRef.current = true;
+
+      const preguntaActual = preguntas[indiceActual];
+      const esUltima = indiceActual + 1 >= preguntas.length;
 
       setRespondida(true);
       setOpcionSeleccionada(indiceOpcion);
+      setValidando(true);
+      setErrorValidacion("");
 
-      const preguntaActual = preguntas[indiceActual];
-      const respuestaCorrecta = preguntaActual.respuestaCorrecta;
-      const respuestaCorrectaTexto = preguntaActual.opciones[respuestaCorrecta];
-      const esCorrecta = indiceOpcion === respuestaCorrecta;
-      const puntosPregunta = preguntaActual.puntaje || 10;
+      try {
+        // La respuesta se valida en el servidor
+        const data = await api.checkAnswer(preguntaActual.id, indiceOpcion);
+        setResultado(data);
+        setMarcador((m) => {
+          const rachaActual = data.correcta ? m.rachaActual + 1 : 0;
+          return {
+            puntaje: m.puntaje + data.puntajeObtenido,
+            correctas: m.correctas + (data.correcta ? 1 : 0),
+            incorrectas: m.incorrectas + (data.correcta ? 0 : 1),
+            rachaActual,
+            mejorRacha: Math.max(m.mejorRacha, rachaActual),
+          };
+        });
+      } catch (err) {
+        setErrorValidacion(
+          "No se pudo validar la respuesta. Se registrará igual al guardar la partida."
+        );
+      } finally {
+        setValidando(false);
+      }
 
       respuestasRef.current.push({
         preguntaId: preguntaActual.id,
-        enunciado: preguntaActual.enunciado,
-        opciones: [...preguntaActual.opciones],
         respuestaSeleccionada: indiceOpcion,
-        respuestaSeleccionadaTexto:
-          indiceOpcion === null
-            ? "Sin responder (tiempo agotado)"
-            : preguntaActual.opciones[indiceOpcion],
-        respuestaCorrecta,
-        respuestaCorrectaTexto,
-        resultado:
-          indiceOpcion === null
-            ? "sin_responder"
-            : esCorrecta
-            ? "correcta"
-            : "incorrecta",
-        puntajeObtenido: esCorrecta ? puntosPregunta : 0,
       });
-
-      const nuevoPuntaje = esCorrecta ? puntaje + puntosPregunta : puntaje;
-      const nuevasCorrectas = esCorrecta ? correctas + 1 : correctas;
-      const nuevasIncorrectas = esCorrecta ? incorrectas : incorrectas + 1;
-      const nuevaRacha = esCorrecta ? rachaActual + 1 : 0;
-      const nuevaMejorRacha =
-        nuevaRacha > mejorRacha ? nuevaRacha : mejorRacha;
-
-      setPuntaje(nuevoPuntaje);
-      setCorrectas(nuevasCorrectas);
-      setIncorrectas(nuevasIncorrectas);
-      setRachaActual(nuevaRacha);
-      setMejorRacha(nuevaMejorRacha);
 
       avanceTimeoutRef.current = setTimeout(() => {
-        if (indiceActual + 1 < preguntas.length) {
-          setIndiceActual((prev) => prev + 1);
-          setRespondida(false);
-          setOpcionSeleccionada(undefined);
-          setTiempoRestante(15);
-        } else {
-          finalizarYGuardar({
-            puntajeFinal: nuevoPuntaje,
-            correctasFinal: nuevasCorrectas,
-            incorrectasFinal: nuevasIncorrectas,
-            mejorRachaFinal: nuevaMejorRacha,
-          });
+        if (esUltima) {
+          finalizarPartida();
+          return;
         }
-      }, 2000);
+        setIndiceActual((prev) => prev + 1);
+        setRespondida(false);
+        setOpcionSeleccionada(undefined);
+        setResultado(null);
+        setErrorValidacion("");
+        setTiempoRestante(TIEMPO_POR_PREGUNTA);
+        respondiendoRef.current = false;
+      }, PAUSA_ENTRE_PREGUNTAS);
     },
-    [
-      respondida,
-      preguntas,
-      indiceActual,
-      puntaje,
-      correctas,
-      incorrectas,
-      rachaActual,
-      mejorRacha,
-      finalizarYGuardar,
-    ]
+    [preguntas, indiceActual, finalizarPartida]
   );
 
-  // Temporizador de 15 segundos por pregunta
+  // Temporizador: solo descuenta segundos (sin efectos secundarios dentro del setState)
   useEffect(() => {
-    if (preguntas.length === 0 || respondida || guardando) return;
+    if (preguntas.length === 0 || respondida || finalizadoRef.current) return;
 
     const intervalo = setInterval(() => {
-      setTiempoRestante((prev) => {
-        if (prev <= 1) {
-          clearInterval(intervalo);
-          responderPregunta(null);
-          return 0;
-        }
-        return prev - 1;
-      });
+      setTiempoRestante((prev) => Math.max(prev - 1, 0));
     }, 1000);
 
     return () => clearInterval(intervalo);
-  }, [indiceActual, respondida, guardando, preguntas.length, responderPregunta]);
+  }, [indiceActual, respondida, preguntas.length]);
+
+  // Cuando el tiempo llega a 0, la pregunta queda sin responder
+  useEffect(() => {
+    if (tiempoRestante === 0 && !respondida) {
+      responderPregunta(null);
+    }
+  }, [tiempoRestante, respondida, responderPregunta]);
 
   // Limpiar timeout de avance al desmontar
   useEffect(() => {
@@ -179,7 +171,7 @@ export function GamePage() {
   }
 
   async function handleAbandonarPartida() {
-    if (finalizadoRef.current || guardando) return;
+    if (finalizadoRef.current || guardando || validando) return;
 
     const confirmar = window.confirm(
       "¿Seguro que querés abandonar la partida? El progreso de esta ronda se perderá."
@@ -190,66 +182,52 @@ export function GamePage() {
     finalizadoRef.current = true;
     setGuardando(true);
 
-    const fechaAbandono = new Date();
-    const duracionTotal = fechaAbandono.getTime() - tiempoInicioRef.current;
-    const preguntasRespondidas = correctas + incorrectas;
-
     if (!respondida) {
-      const preguntaActual = preguntas[indiceActual];
       respuestasRef.current.push({
-        preguntaId: preguntaActual.id,
-        enunciado: preguntaActual.enunciado,
-        opciones: [...preguntaActual.opciones],
+        preguntaId: preguntas[indiceActual].id,
         respuestaSeleccionada: null,
-        respuestaSeleccionadaTexto: "Sin responder (partida abandonada)",
-        respuestaCorrecta: preguntaActual.respuestaCorrecta,
-        respuestaCorrectaTexto:
-          preguntaActual.opciones[preguntaActual.respuestaCorrecta],
-        resultado: "abandonada",
-        puntajeObtenido: 0,
+        abandonada: true,
       });
     }
 
-    const partidaAbandonada = {
-      categoria,
-      cantidadPreguntas: preguntas.length,
-      preguntasRespondidas,
-      puntaje,
-      respuestasCorrectas: correctas,
-      respuestasIncorrectas: incorrectas,
-      mejorRacha,
-      duracion: duracionTotal,
-      fechaInicio: new Date(tiempoInicioRef.current).toISOString(),
-      fechaFinalizacion: fechaAbandono.toISOString(),
-      respuestas: respuestasRef.current,
-      estado: "abandonada",
-    };
-
     try {
-      await api.saveGame(partidaAbandonada);
+      await api.saveGame({
+        categoria,
+        cantidadPreguntas: preguntas.length,
+        fechaInicio: new Date(tiempoInicioRef.current).toISOString(),
+        fechaFinalizacion: new Date().toISOString(),
+        respuestas: respuestasRef.current,
+        estado: "abandonada",
+      });
     } catch (err) {
-      console.error("Error al registrar partida abandonada:", err);
+      window.alert(
+        `No se pudo registrar la partida abandonada: ${err.message}`
+      );
     }
 
     navigate("/", { replace: true });
   }
 
   const preguntaActual = preguntas[indiceActual];
-  const respuestaCorrecta = preguntaActual.respuestaCorrecta;
-  const puntosPregunta = preguntaActual.puntaje || 10;
+  const respuestaCorrecta = resultado ? resultado.respuestaCorrecta : undefined;
 
   let mensajeFeedback = "";
   let claseFeedback = "";
 
   if (respondida) {
-    if (opcionSeleccionada === respuestaCorrecta) {
-      mensajeFeedback = `Respuesta correcta. +${puntosPregunta} puntos.`;
-      claseFeedback = "respuesta-correcta";
-    } else if (opcionSeleccionada === null) {
-      mensajeFeedback = `Se acabó el tiempo. La respuesta correcta era: ${preguntaActual.opciones[respuestaCorrecta]}`;
+    if (validando) {
+      mensajeFeedback = "Validando respuesta...";
+    } else if (errorValidacion) {
+      mensajeFeedback = errorValidacion;
       claseFeedback = "respuesta-incorrecta";
-    } else {
-      mensajeFeedback = `Respuesta incorrecta. La respuesta correcta era: ${preguntaActual.opciones[respuestaCorrecta]}`;
+    } else if (resultado?.correcta) {
+      mensajeFeedback = `Respuesta correcta. +${resultado.puntajeObtenido} puntos.`;
+      claseFeedback = "respuesta-correcta";
+    } else if (resultado && opcionSeleccionada === null) {
+      mensajeFeedback = `Se acabó el tiempo. La respuesta correcta era: ${resultado.respuestaCorrectaTexto}`;
+      claseFeedback = "respuesta-incorrecta";
+    } else if (resultado) {
+      mensajeFeedback = `Respuesta incorrecta. La respuesta correcta era: ${resultado.respuestaCorrectaTexto}`;
       claseFeedback = "respuesta-incorrecta";
     }
   }
@@ -282,19 +260,19 @@ export function GamePage() {
 
         <div>
           <span className="etiqueta-tarjeta">PUNTAJE</span>
-          <strong id="puntaje-partida">{puntaje}</strong>
+          <strong id="puntaje-partida">{marcador.puntaje}</strong>
         </div>
       </div>
 
       <div className="datos-rachas">
         <p>
           Racha actual
-          <strong id="racha-actual">{rachaActual}</strong>
+          <strong id="racha-actual">{marcador.rachaActual}</strong>
         </p>
 
         <p>
           Mejor racha
-          <strong id="mejor-racha">{mejorRacha}</strong>
+          <strong id="mejor-racha">{marcador.mejorRacha}</strong>
         </p>
       </div>
 
@@ -305,7 +283,7 @@ export function GamePage() {
         <div id="opciones-respuesta" className="opciones-respuesta">
           {preguntaActual.opciones.map((opcion, indice) => {
             let claseExtra = "";
-            if (respondida) {
+            if (respondida && respuestaCorrecta !== undefined) {
               if (indice === respuestaCorrecta) {
                 claseExtra = "opcion-correcta";
               } else if (indice === opcionSeleccionada) {
@@ -337,17 +315,42 @@ export function GamePage() {
           </p>
         )}
 
-        <div className="contenedor-volver-partida">
-          <button
-            type="button"
-            id="btn-abandonar-partida"
-            className="btn-preguntas-volver"
-            disabled={guardando}
-            onClick={handleAbandonarPartida}
-          >
-            {guardando ? "Guardando..." : "Abandonar partida"}
-          </button>
-        </div>
+        {errorGuardado && (
+          <div role="alert">
+            <p className="mensaje-formulario error">{errorGuardado}</p>
+            <div className="grupo-botones">
+              <button
+                type="button"
+                className="boton-principal"
+                disabled={guardando}
+                onClick={guardarPartidaCompletada}
+              >
+                {guardando ? "Guardando..." : "Reintentar guardado"}
+              </button>
+              <button
+                type="button"
+                className="boton-secundario"
+                onClick={() => navigate("/", { replace: true })}
+              >
+                Volver al menú sin guardar
+              </button>
+            </div>
+          </div>
+        )}
+
+        {!errorGuardado && (
+          <div className="contenedor-volver-partida">
+            <button
+              type="button"
+              id="btn-abandonar-partida"
+              className="btn-preguntas-volver"
+              disabled={guardando || validando}
+              onClick={handleAbandonarPartida}
+            >
+              {guardando ? "Guardando..." : "Abandonar partida"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

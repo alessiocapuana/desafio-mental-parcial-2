@@ -15,3 +15,8 @@ export const updateQuestionSchema = Joi.object({
   respuestaCorrecta: Joi.number().integer().min(0).max(3),
   puntaje: Joi.number().integer().min(1),
 }).min(1);
+
+// Respuesta del jugador a una pregunta. null = se agotó el tiempo.
+export const answerSchema = Joi.object({
+  respuestaSeleccionada: Joi.number().integer().min(0).max(3).allow(null).required(),
+});

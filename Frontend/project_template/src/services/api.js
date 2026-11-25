@@ -1,5 +1,8 @@
 const API_URL = "http://localhost:3000/api";
 
+// Nombre del evento que avisa que la sesión venció (lo escucha AuthContext)
+export const SESSION_EXPIRED_EVENT = "auth:session-expired";
+
 async function request(endpoint, options = {}) {
   const token = localStorage.getItem("token");
 
@@ -15,6 +18,12 @@ async function request(endpoint, options = {}) {
   });
 
   const data = await response.json().catch(() => ({}));
+
+  // Si había sesión y el servidor responde 401, el token venció o es inválido
+  if (response.status === 401 && token && endpoint !== "/auth/login") {
+    localStorage.removeItem("token");
+    window.dispatchEvent(new Event(SESSION_EXPIRED_EVENT));
+  }
 
   if (!response.ok) {
     throw new Error(data.message || "Error al comunicarse con el servidor");
@@ -42,6 +51,11 @@ export const api = {
     const query = new URLSearchParams(params).toString();
     return request(`/questions${query ? `?${query}` : ""}`);
   },
+  checkAnswer: (id, respuestaSeleccionada) =>
+    request(`/questions/${id}/check`, {
+      method: "POST",
+      body: JSON.stringify({ respuestaSeleccionada }),
+    }),
   createQuestion: (questionData) =>
     request("/questions", {
       method: "POST",

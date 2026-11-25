@@ -177,12 +177,13 @@ Todas las rutas protegidas requieren enviar el token JWT en el header: `Authoriz
 | `POST` | `/api/auth/register` | Público | Registra un nuevo usuario con rol `USER`. |
 | `POST` | `/api/auth/login` | Público | Autentica credenciales y devuelve el token JWT. |
 | `GET` | `/api/auth/profile` | Autenticado | Devuelve los datos del usuario de la sesión activa. |
-| `GET` | `/api/questions` | Autenticado | Obtiene preguntas (soporta `?category=` y `?limit=`). |
-| `GET` | `/api/questions/:id` | Autenticado | Obtiene el detalle de una pregunta por su ID. |
+| `GET` | `/api/questions` | Autenticado | Obtiene preguntas (soporta `?category=` y `?limit=`). Solo el `ADMIN` recibe la respuesta correcta. |
+| `GET` | `/api/questions/:id` | Autenticado | Obtiene el detalle de una pregunta por su ID. Solo el `ADMIN` recibe la respuesta correcta. |
+| `POST` | `/api/questions/:id/check` | Autenticado | Valida en el servidor la respuesta elegida (`{ respuestaSeleccionada }`, `null` = tiempo agotado). |
 | `POST` | `/api/questions` | Solo `ADMIN` | Crea una nueva pregunta en el banco. |
 | `PUT` | `/api/questions/:id` | Solo `ADMIN` | Modifica una pregunta existente. |
 | `DELETE` | `/api/questions/:id` | Solo `ADMIN` | Elimina una pregunta del banco. |
-| `POST` | `/api/games` | Autenticado | Registra una partida (`completada` o `abandonada`). |
+| `POST` | `/api/games` | Autenticado | Registra una partida (`completada` o `abandonada`). El cliente envía solo las opciones elegidas; el servidor calcula aciertos, puntaje y rachas. |
 | `GET` | `/api/games/history` | Autenticado | Lista el historial del usuario (`?categoria=`, `?estado=`). |
 | `GET` | `/api/games/stats` | Autenticado | Calcula las estadísticas globales del jugador. |
 | `GET` | `/api/games/ranking` | Autenticado | Devuelve el Top 10 del ranking general. |

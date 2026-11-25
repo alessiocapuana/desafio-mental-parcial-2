@@ -4,8 +4,7 @@ export class UserController {
   static async getAll(req, res) {
     const users = await UserModel.getAll();
     // Excluimos las contraseñas antes de devolver la lista por seguridad
-    const safeUsers = users.map(({ password, ...userWithoutPassword }) => userWithoutPassword);
-    res.status(200).json(safeUsers);
+    res.status(200).json(users.map((user) => UserModel.toPublic(user)));
   }
 
   static async getById(req, res) {
@@ -16,7 +15,6 @@ export class UserController {
       return res.status(404).json({ message: "Usuario no encontrado" });
     }
 
-    const { password, ...safeUser } = user;
-    res.status(200).json(safeUser);
+    res.status(200).json(UserModel.toPublic(user));
   }
 }

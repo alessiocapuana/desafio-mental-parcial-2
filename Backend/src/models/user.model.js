@@ -5,6 +5,13 @@ import { hashPassword } from "../utils/hash.js";
 const FILE_NAME = "users.json";
 
 export class UserModel {
+  // Devuelve una copia del usuario sin la contraseña (nunca se envía al cliente)
+  static toPublic(user) {
+    if (!user) return null;
+    const { password, ...publicUser } = user;
+    return publicUser;
+  }
+
   // Precarga un usuario administrador si no existe
   static async seedAdmin() {
     // Si readData falla porque está vacío, atajamos con un array vacío []

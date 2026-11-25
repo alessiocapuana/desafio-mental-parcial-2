@@ -4,6 +4,13 @@ import { readData, writeData } from "../utils/fileManager.js";
 const FILE_NAME = "questions.json";
 
 export class QuestionModel {
+  // Copia de la pregunta sin la respuesta correcta (para los jugadores)
+  static toPublic(question) {
+    if (!question) return null;
+    const { respuestaCorrecta, ...publicQuestion } = question;
+    return publicQuestion;
+  }
+
   static async getAll({ category, limit } = {}) {
     let questions = [];
     try {

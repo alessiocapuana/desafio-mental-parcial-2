@@ -4,19 +4,24 @@ import { UserModel } from "../models/user.model.js";
 export class GameController {
   static async create(req, res) {
     try {
+      // El servidor calcula los resultados a partir de las respuestas elegidas
+      const partida = await GameModel.buildGame(req.body);
+
       const user = await UserModel.getById(req.user.id);
-      const gameData = {
-        ...req.body,
+      const newGame = await GameModel.create({
+        ...partida,
         userId: req.user.id,
         usuario: user ? user.name : req.user.email,
-      };
-      const newGame = await GameModel.create(gameData);
+      });
+
       res.status(201).json(newGame);
     } catch (error) {
+      if (error.status) {
+        return res.status(error.status).json({ message: error.message });
+      }
       res.status(500).json({ message: "Error al guardar la partida", error: error.message });
     }
   }
-  // ... dejá getMyHistory, getMyStats y getRanking exactamente igual que antes
 
   static async getMyHistory(req, res) {
     try {
