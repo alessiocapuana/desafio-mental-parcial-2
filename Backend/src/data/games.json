@@ -146,5 +146,171 @@
     "estado": "completada",
     "userId": "48cea300-cf2e-4b72-a3f9-8b51d29b1fe3",
     "usuario": "alessio"
+  },
+  {
+    "id": "66b77be1-dad6-436e-9f40-2d6972dbb095",
+    "categoria": "Geografía",
+    "cantidadPreguntas": 5,
+    "preguntasRespondidas": 1,
+    "puntaje": 0,
+    "respuestasCorrectas": 0,
+    "respuestasIncorrectas": 1,
+    "mejorRacha": 0,
+    "duracion": 90000,
+    "fechaInicio": "2026-11-25T20:00:00.000Z",
+    "fechaFinalizacion": "2026-11-25T20:01:30.000Z",
+    "respuestas": [
+      {
+        "preguntaId": 44,
+        "enunciado": "¿Cuál es la montaña más alta del mundo sobre el nivel del mar?",
+        "opciones": [
+          "Aconcagua",
+          "Kilimanjaro",
+          "Everest",
+          "Mont Blanc"
+        ],
+        "respuestaCorrecta": 2,
+        "respuestaCorrectaTexto": "Everest",
+        "respuestaSeleccionada": 0,
+        "respuestaSeleccionadaTexto": "Aconcagua",
+        "resultado": "incorrecta",
+        "puntajeObtenido": 0
+      }
+    ],
+    "estado": "abandonada",
+    "userId": "8b93a229-0417-4491-abb4-a1b1c6681a2f",
+    "usuario": "Tester Postman"
+  },
+  {
+    "id": "61e01a75-c88f-4b6b-8bc5-c6c2a1eed10c",
+    "categoria": "Informática y programación",
+    "cantidadPreguntas": 5,
+    "preguntasRespondidas": 5,
+    "puntaje": 40,
+    "respuestasCorrectas": 4,
+    "respuestasIncorrectas": 1,
+    "mejorRacha": 4,
+    "duracion": 39853,
+    "fechaInicio": "2026-11-25T21:47:44.595Z",
+    "fechaFinalizacion": "2026-11-25T21:48:24.448Z",
+    "respuestas": [
+      {
+        "preguntaId": 53,
+        "enunciado": "¿Qué es una variable en programación?",
+        "opciones": [
+          "Una instrucción que siempre se repite",
+          "Un espacio identificado para almacenar un valor",
+          "Un tipo de conexión de red",
+          "Un error de sintaxis"
+        ],
+        "respuestaCorrecta": 1,
+        "respuestaCorrectaTexto": "Un espacio identificado para almacenar un valor",
+        "respuestaSeleccionada": null,
+        "respuestaSeleccionadaTexto": "Sin responder (tiempo agotado)",
+        "resultado": "sin_responder",
+        "puntajeObtenido": 0
+      },
+      {
+        "preguntaId": 52,
+        "enunciado": "¿Qué método HTTP se utiliza normalmente para solicitar la lectura de un recurso?",
+        "opciones": [
+          "DELETE",
+          "GET",
+          "PATCH",
+          "TRACE"
+        ],
+        "respuestaCorrecta": 1,
+        "respuestaCorrectaTexto": "GET",
+        "respuestaSeleccionada": 1,
+        "respuestaSeleccionadaTexto": "GET",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 49,
+        "enunciado": "¿Qué estructura de programación permite ejecutar un bloque según una condición?",
+        "opciones": [
+          "if",
+          "import",
+          "return",
+          "print"
+        ],
+        "respuestaCorrecta": 0,
+        "respuestaCorrectaTexto": "if",
+        "respuestaSeleccionada": 0,
+        "respuestaSeleccionadaTexto": "if",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 58,
+        "enunciado": "¿Qué función cumple una clave foránea en una base de datos relacional?",
+        "opciones": [
+          "Relaciona registros con una clave de otra tabla",
+          "Ordena automáticamente todos los datos",
+          "Encripta cada columna",
+          "Elimina las tablas duplicadas"
+        ],
+        "respuestaCorrecta": 0,
+        "respuestaCorrectaTexto": "Relaciona registros con una clave de otra tabla",
+        "respuestaSeleccionada": 0,
+        "respuestaSeleccionadaTexto": "Relaciona registros con una clave de otra tabla",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      },
+      {
+        "preguntaId": 47,
+        "enunciado": "¿Qué lenguaje se utiliza principalmente para estructurar el contenido de una página web?",
+        "opciones": [
+          "HTML",
+          "SQL",
+          "Python",
+          "Bash"
+        ],
+        "respuestaCorrecta": 0,
+        "respuestaCorrectaTexto": "HTML",
+        "respuestaSeleccionada": 0,
+        "respuestaSeleccionadaTexto": "HTML",
+        "resultado": "correcta",
+        "puntajeObtenido": 10
+      }
+    ],
+    "estado": "completada",
+    "userId": "d296f699-5c54-43d2-a5ef-96e8c778064e",
+    "usuario": "prueba123"
+  },
+  {
+    "id": "5bba4ed1-f614-43fb-9bb1-2dd4165d3395",
+    "categoria": "Informática y programación",
+    "cantidadPreguntas": 10,
+    "preguntasRespondidas": 0,
+    "puntaje": 0,
+    "respuestasCorrectas": 0,
+    "respuestasIncorrectas": 0,
+    "mejorRacha": 0,
+    "duracion": 1997,
+    "fechaInicio": "2026-11-25T21:49:33.248Z",
+    "fechaFinalizacion": "2026-11-25T21:49:35.245Z",
+    "respuestas": [
+      {
+        "preguntaId": 48,
+        "enunciado": "¿Para qué se utiliza SQL principalmente?",
+        "opciones": [
+          "Editar imágenes",
+          "Consultar y administrar datos en bases de datos",
+          "Diseñar redes físicas",
+          "Comprimir archivos"
+        ],
+        "respuestaCorrecta": 1,
+        "respuestaCorrectaTexto": "Consultar y administrar datos en bases de datos",
+        "respuestaSeleccionada": null,
+        "respuestaSeleccionadaTexto": "Sin responder (partida abandonada)",
+        "resultado": "abandonada",
+        "puntajeObtenido": 0
+      }
+    ],
+    "estado": "abandonada",
+    "userId": "d296f699-5c54-43d2-a5ef-96e8c778064e",
+    "usuario": "prueba123"
   }
 ]

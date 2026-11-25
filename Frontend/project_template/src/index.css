@@ -2260,3 +2260,140 @@ body.modal-abierto {
   background-color: var(--color-panel);
   color: var(--color-texto);
 }
+
+.pantalla-error-403 {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+.error-403-contenedor {
+  width: 100%;
+  max-width: 780px;
+  display: grid;
+  grid-template-columns: minmax(210px, 280px) 1fr;
+  align-items: center;
+  gap: clamp(1.75rem, 5vw, 4rem);
+}
+
+.error-403-ilustracion {
+  color: #243654; /* Tono oscuro con contraste suficiente sobre --color-fondo para que se distinga el escudo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-403-ilustracion svg {
+  width: 100%;
+  max-width: 270px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.35));
+}
+
+.error-403-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.error-403-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-error);
+  background-color: rgba(255, 133, 133, 0.12);
+  border: 1px solid rgba(255, 133, 133, 0.3);
+}
+
+.error-403-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-error);
+}
+
+.error-403-titulo {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--color-texto);
+}
+
+.error-403-descripcion {
+  margin: 0 0 1.85rem;
+  max-width: 36ch;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.55;
+  color: var(--color-texto-secundario);
+}
+
+.error-403-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.85rem;
+  border: none;
+  border-radius: var(--radio-control);
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.error-403-boton:hover {
+  background-color: var(--color-acento-hover);
+  transform: translateY(-1px);
+}
+
+.error-403-boton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+  .error-403-contenedor {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 420px;
+  }
+
+  .error-403-ilustracion svg {
+    max-width: clamp(160px, 46vw, 210px);
+  }
+
+  .error-403-contenido {
+    align-items: center;
+    text-align: center;
+  }
+
+  .error-403-descripcion {
+    margin-bottom: 1.5rem;
+  }
+
+  .error-403-boton {
+    width: 100%;
+    max-width: 240px;
+  }
+}

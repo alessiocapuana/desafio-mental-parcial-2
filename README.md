@@ -23,18 +23,18 @@
 El sistema está dividido en **dos aplicaciones independientes** que se comunican mediante peticiones HTTP en formato JSON:
 
 ### **Frontend (SPA)**
-* **React** + **Vite**: Construcción de la interfaz de usuario mediante componentes reutilizables.
-* **React Router DOM**: Navegación fluida sin recarga de página y protección de rutas privadas según autenticación y rol.
-* **Context API (`AuthContext`)**: Gestión global de la sesión del usuario, recuperación automática al recargar el navegador y cierre de sesión.
-* **Fetch API**: Cliente HTTP centralizado con envío automático de cabecera `Authorization: Bearer <token>`.
-* **CSS3**: Conserva la identidad visual, paleta de colores y diseño *responsive* del proyecto original.
+- **React** + **Vite**: Construcción de la interfaz de usuario mediante componentes reutilizables.
+- **React Router DOM**: Navegación fluida sin recarga de página y protección de rutas privadas según autenticación y rol, incluyendo una **pantalla dedicada de Error 403 (Acceso denegado)** para accesos no autorizados.
+- **Context API (`AuthContext`)**: Gestión global de la sesión del usuario, recuperación automática al recargar el navegador y cierre de sesión.
+- **Fetch API**: Cliente HTTP centralizado con envío automático de cabecera `Authorization: Bearer <token>`.
+- **CSS3**: Conserva la identidad visual, paleta de colores y diseño *responsive* del proyecto original.
 
 ### **Backend (API REST)**
-* **Node.js** + **Express**: Servidor web y enrutamiento RESTful por capas (`routes`, `controllers`, `models`, `dtos`, `middlewares`).
-* **JSON Web Tokens (`jsonwebtoken`)**: Autenticación basada en tokens con expiración.
-* **Bcrypt (`bcrypt`)**: Encriptación segura de contraseñas antes de su almacenamiento.
-* **Joi (`joi`)**: Validación estricta de esquemas de entrada en peticiones `POST` y `PUT`.
-* **Persistencia en archivos JSON**: Almacenamiento permanente de usuarios, preguntas y partidas en el servidor.
+- **Node.js** + **Express**: Servidor web y enrutamiento RESTful por capas (`routes`, `controllers`, `models`, `dtos`, `middlewares`).
+- **JSON Web Tokens (`jsonwebtoken`)**: Autenticación basada en tokens con expiración.
+- **Bcrypt (`bcrypt`)**: Encriptación segura de contraseñas antes de su almacenamiento.
+- **Joi (`joi`)**: Validación estricta de esquemas de entrada en peticiones `POST` y `PUT`.
+- **Persistencia en archivos JSON**: Almacenamiento permanente de usuarios, preguntas y partidas en el servidor.
 
 ---
 
@@ -48,7 +48,7 @@ Segundo Parcial Usach - Capuana/
 │   │   ├── controllers/              # Controladores de lógica HTTP (auth, user, question, game)
 │   │   ├── data/                     # Base de datos persistente en JSON
 │   │   │   ├── games.json            # Registro histórico de partidas jugadas y abandonadas
-│   │   │   ├── questions.json        # Banco de preguntas (60 preguntas en 4 categorías)
+│   │   │   ├── questions.json        # Banco de preguntas en 4 categorías
 │   │   │   └── users.json            # Usuarios registrados con contraseñas hasheadas
 │   │   ├── dtos/                     # Esquemas de validación Joi (user, login, question, game)
 │   │   ├── middlewares/              # Middlewares de autenticación, roles y validación
@@ -62,7 +62,7 @@ Segundo Parcial Usach - Capuana/
 └── Frontend/
     └── project_template/             # Aplicación Web (React + Vite)
         ├── src/
-        │   ├── components/           # Componentes reutilizables (Layout, StatCard, GameDetailModal, ProtectedRoute)
+        │   ├── components/           # Componentes reutilizables (Layout, StatCard, GameDetailModal, ProtectedRoute con vista 403)
         │   ├── context/              # Estado global de sesión (AuthContext.jsx)
         │   ├── pages/                # Pantallas (Login, Registro, Menú, Partida, Resultados, Historial, Ranking, Admin)
         │   ├── services/             # Servicio centralizado de peticiones HTTP (api.js)
@@ -78,8 +78,8 @@ Segundo Parcial Usach - Capuana/
 
 Antes de comenzar, asegurarse de tener instalado en el equipo:
 
-* **Node.js** (versión **18.0** o superior recomendada).
-* **npm** (gestor de paquetes incluido con Node.js).
+- **Node.js** (versión **18.0** o superior recomendada).
+- **npm** (gestor de paquetes incluido con Node.js).
 
 ---
 
@@ -95,10 +95,10 @@ Antes de comenzar, asegurarse de tener instalado en el equipo:
    ```bash
    npm install
    ```
-3. Crear un archivo llamado **`.env`** dentro de `Backend/` (tomando como referencia `Backend/.env.example`) y agregar las siguientes variables:
+3. Crear un archivo llamado **`.env`** dentro de `Backend/` copiando `Backend/.env.example` (que incluye valores de ejemplo listos para entorno local):
    ```env
    PORT=3000
-   JWT_SECRET=desafio_mental_secreto_2026
+   JWT_SECRET=cambiar_por_una_clave_secreta
    ```
 
 ---
@@ -118,23 +118,23 @@ Antes de comenzar, asegurarse de tener instalado en el equipo:
 
 ## 🚀 Ejecución de ambos proyectos
 
-Para utilizar la aplicación completa, **<u>ambos servidores deben estar corriendo en simultáneo</u>** en dos terminales separadas:
+Para utilizar la aplicación completa, **ambos servidores deben estar corriendo en simultáneo** en dos terminales separadas:
 
 ### **Terminal 1 — Levantar el servidor Backend**
 Dentro de `Backend/`:
 ```bash
 npm run dev
 ```
-* El servidor iniciará en **`http://localhost:3000`**.
-* Al arrancar por primera vez, el sistema verifica y crea automáticamente la cuenta de **Administrador** por defecto si aún no existe.
+- El servidor iniciará en **`http://localhost:3000`**.
+- Al arrancar por primera vez, el sistema verifica y crea automáticamente la cuenta de **Administrador** por defecto si aún no existe.
 
 ### **Terminal 2 — Levantar la aplicación Frontend**
 Dentro de `Frontend/project_template/`:
 ```bash
 npm run dev
 ```
-* Vite iniciará la aplicación web y mostrará la URL local en consola (habitualmente **`http://localhost:5173`**).
-* Abrir esa dirección en el navegador para comenzar a usar **Desafío Mental**.
+- Vite iniciará la aplicación web y mostrará la URL local en consola (habitualmente **`http://localhost:5173`**).
+- Abrir esa dirección en el navegador para comenzar a usar **Desafío Mental**.
 
 ---
 
@@ -144,27 +144,28 @@ El sistema contempla **dos tipos de usuarios** con permisos diferenciados tanto 
 
 ### **1. Usuario Administrador (`ADMIN`)**
 Cuenta creada automáticamente por el servidor para gestionar el banco de preguntas además de poder jugar:
-* **Correo electrónico:** `admin@admin.com`
-* **Contraseña:** `admin1234`
+- **Correo electrónico:** `admin@admin.com`
+- **Contraseña:** `admin1234`
 
 ### **2. Usuario Jugador (`USER`)**
-* Se crea desde la pantalla pública **Registro** dentro de la aplicación web.
-* Por seguridad, todo registro público asigna automáticamente el rol **`USER`** (sin acceso a la ruta `/admin/preguntas` ni a las operaciones de modificación del banco de preguntas).
+- Se crea desde la pantalla pública **Registro** dentro de la aplicación web.
+- Por seguridad, todo registro público asigna automáticamente el rol **`USER`**.
+- **Protección de acceso (403):** Si un usuario con rol `USER` intenta ingresar manualmente por URL a `/admin/preguntas`, `ProtectedRoute` bloquea la vista y muestra una **pantalla dedicada de Error 403 — Acceso denegado** con opción para volver al inicio. En paralelo, el backend valida el rol mediante middleware y rechaza con estado HTTP **`403 Forbidden`** cualquier petición no autorizada sobre el banco de preguntas.
 
 ---
 
 ## 🎮 Funcionalidades principales
 
-* **Autenticación y persistencia de sesión:** Registro con validaciones, inicio de sesión con JWT, recuperación automática de sesión al recargar el navegador (`F5`) y cierre de sesión.
-* **Configuración y desarrollo de partidas:**
-  * Selección entre **4 categorías** (*Historia y cultura*, *Ciencia y naturaleza*, *Geografía* e *Informática y programación*) y cantidad de preguntas (**5** o **10**).
-  * **Temporizador de 15 segundos** por pregunta con validación inmediata, bloqueo de opciones tras responder y avance automático.
-  * Seguimiento en tiempo real de **puntaje acumulado**, **racha actual** y **mejor racha**.
-  * Posibilidad de **abandonar la partida** con confirmación previa, registrando el estado correspondiente.
-* **Resultados y estadísticas:** Resumen detallado al finalizar cada ronda y métricas globales del jugador en el menú principal calculadas a partir de sus partidas completadas.
-* **Historial con filtros y detalle por pregunta:** Resumen de partidas completadas/abandonadas, filtros combinables por categoría y estado, barra dinámica de porcentaje de aciertos y **modal de detalle** para revisar respuesta por respuesta.
-* **Ranking Top 10:** Clasificación general de las 10 mejores partidas completadas, ordenadas por **mayor puntaje**, luego **menor duración** y finalmente **fecha de finalización más antigua**.
-* **Panel de Administración (`ADMIN`):** Vista exclusiva para dar de alta nuevas preguntas, editar enunciados/opciones/puntajes y eliminar preguntas del banco con buscador y filtro por categoría.
+- **Autenticación, persistencia de sesión y control de acceso:** Registro con validaciones, inicio de sesión con JWT, recuperación automática de sesión al recargar el navegador (`F5`), cierre de sesión, protección de rutas privadas y **pantalla de Error 403** ante intentos de acceso directo a secciones restringidas por rol.
+- **Configuración y desarrollo de partidas:**
+  - Selección entre **4 categorías** (*Historia y cultura*, *Ciencia y naturaleza*, *Geografía* e *Informática y programación*) y cantidad de preguntas (**5** o **10**).
+  - **Temporizador de 15 segundos** por pregunta con validación inmediata en el servidor, bloqueo de opciones tras responder y avance automático.
+  - Seguimiento en tiempo real de **puntaje acumulado**, **racha actual** y **mejor racha**.
+  - Posibilidad de **abandonar la partida** con confirmación previa, registrando el estado correspondiente.
+- **Resultados y estadísticas:** Resumen detallado al finalizar cada ronda y métricas globales del jugador en el menú principal calculadas a partir de sus partidas completadas.
+- **Historial con filtros y detalle por pregunta:** Resumen de partidas completadas/abandonadas, filtros combinables por categoría y estado, barra dinámica de porcentaje de aciertos y **modal de detalle** para revisar respuesta por respuesta.
+- **Ranking Top 10:** Clasificación general de las 10 mejores partidas completadas, ordenadas por **mayor puntaje**, luego **menor duración** y finalmente **fecha de finalización más antigua**.
+- **Panel de Administración (`ADMIN`):** Vista exclusiva para dar de alta nuevas preguntas, editar enunciados/opciones/puntajes y eliminar preguntas del banco con buscador y filtro por categoría.
 
 ---
 

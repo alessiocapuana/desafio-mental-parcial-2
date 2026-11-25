@@ -22,5 +22,21 @@
     "password": "$2b$10$ZgFGWQI89Rbc67VSR0DEn.rOrji4JDGAayQqhvWRHzu.ME8z6uLhG",
     "role": "USER",
     "createdAt": "2026-11-23T22:34:19.341Z"
+  },
+  {
+    "id": "8b93a229-0417-4491-abb4-a1b1c6681a2f",
+    "name": "Tester Postman",
+    "email": "tester.postman@test.com",
+    "password": "$2b$10$dTejh3qSO44/s1GRj1LGY.QsPd4F91Amkt59w6TFmiQSnfQMpTGne",
+    "role": "USER",
+    "createdAt": "2026-11-25T21:10:06.434Z"
+  },
+  {
+    "id": "d296f699-5c54-43d2-a5ef-96e8c778064e",
+    "name": "prueba123",
+    "email": "prueba@gmail.com",
+    "password": "$2b$10$QaYk30i0uZM83XGWpHrzeeJB0IwFSbU7VqE6ff0BBKd0KsNs/G2HO",
+    "role": "USER",
+    "createdAt": "2026-11-25T21:46:59.989Z"
   }
 ]
