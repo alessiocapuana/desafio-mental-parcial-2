@@ -752,5 +752,525 @@
     ],
     "respuestaCorrecta": 1,
     "puntaje": 10
+  },
+  {
+    "id": 61,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿En qué año comenzó la Segunda Guerra Mundial?",
+    "opciones": [
+      "1935",
+      "1939",
+      "1941",
+      "1945"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 62,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién pintó La noche estrellada?",
+    "opciones": [
+      "Pablo Picasso",
+      "Salvador Dalí",
+      "Vincent van Gogh",
+      "Rembrandt"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 63,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Qué civilización antigua habitó principalmente en la península de Yucatán?",
+    "opciones": [
+      "Inca",
+      "Maya",
+      "Asiria",
+      "Etrusca"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 64,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién escribió la novela distópica 1984?",
+    "opciones": [
+      "Aldous Huxley",
+      "Ray Bradbury",
+      "George Orwell",
+      "Ernest Hemingway"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 65,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿En qué ciudad argentina se izó por primera vez la bandera nacional en 1812?",
+    "opciones": [
+      "Buenos Aires",
+      "Córdoba",
+      "Rosario",
+      "Tucumán"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 66,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Qué imperio construyó el Coliseo?",
+    "opciones": [
+      "Imperio otomano",
+      "Imperio romano",
+      "Imperio bizantino",
+      "Imperio macedonio"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 67,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿A qué poeta griego se le atribuye La Odisea?",
+    "opciones": [
+      "Sófocles",
+      "Platón",
+      "Homero",
+      "Virgilio"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 68,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Qué invento desarrolló Johannes Gutenberg en el siglo XV?",
+    "opciones": [
+      "La máquina de vapor",
+      "La imprenta de tipos móviles",
+      "El telégrafo",
+      "La brújula"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 69,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿En qué región del mundo nació el tango como expresión musical y danza?",
+    "opciones": [
+      "Caribe",
+      "Río de la Plata",
+      "Andalucía",
+      "Península ibérica"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 70,
+    "categoria": "Historia y cultura",
+    "enunciado": "¿Quién fue la primera mujer en recibir un Premio Nobel?",
+    "opciones": [
+      "Rosalind Franklin",
+      "Ada Lovelace",
+      "Marie Curie",
+      "Simone de Beauvoir"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 71,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es el elemento químico representado por el símbolo Au?",
+    "opciones": [
+      "Plata",
+      "Aluminio",
+      "Oro",
+      "Argón"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 72,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué planeta del sistema solar destaca por su extenso sistema de anillos?",
+    "opciones": [
+      "Júpiter",
+      "Saturno",
+      "Urano",
+      "Neptuno"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 73,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuántos huesos tiene aproximadamente el cuerpo humano adulto?",
+    "opciones": [
+      "156",
+      "206",
+      "256",
+      "306"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 74,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es el animal terrestre más veloz del mundo?",
+    "opciones": [
+      "León",
+      "Antílope",
+      "Guepardo",
+      "Caballo"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 75,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué instrumento se utiliza para medir la presión atmosférica?",
+    "opciones": [
+      "Termómetro",
+      "Barómetro",
+      "Higrómetro",
+      "Anemómetro"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 76,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué partícula subatómica posee carga eléctrica negativa?",
+    "opciones": [
+      "Protón",
+      "Neutrón",
+      "Electrón",
+      "Positrón"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 77,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es el animal más grande que existe en la Tierra?",
+    "opciones": [
+      "Elefante asiático",
+      "Ballena azul",
+      "Tiburón ballena",
+      "Orca"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 78,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Qué órgano del cuerpo humano produce la insulina?",
+    "opciones": [
+      "Hígado",
+      "Páncreas",
+      "Bazo",
+      "Estómago"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 79,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cuál es el gas más abundante en la atmósfera terrestre?",
+    "opciones": [
+      "Oxígeno",
+      "Dióxido de carbono",
+      "Nitrógeno",
+      "Argón"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 80,
+    "categoria": "Ciencia y naturaleza",
+    "enunciado": "¿Cómo se llama el proceso por el cual las orugas se transforman en mariposas?",
+    "opciones": [
+      "Polinización",
+      "Metamorfosis",
+      "Hibernación",
+      "Fisión"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 81,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es el río más largo y caudaloso de América del Sur?",
+    "opciones": [
+      "Río Paraná",
+      "Río Orinoco",
+      "Río Amazonas",
+      "Río Magdalena"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 82,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la capital de Brasil?",
+    "opciones": [
+      "Río de Janeiro",
+      "São Paulo",
+      "Brasilia",
+      "Salvador"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 83,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué océano separa América de Europa y África?",
+    "opciones": [
+      "Océano Índico",
+      "Océano Atlántico",
+      "Océano Pacífico",
+      "Océano Antártico"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 84,
+    "categoria": "Geografía",
+    "enunciado": "¿En qué país se encuentra la ciudad de Estambul?",
+    "opciones": [
+      "Grecia",
+      "Turquía",
+      "Bulgaria",
+      "Egipto"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 85,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la provincia más extensa de la República Argentina?",
+    "opciones": [
+      "Córdoba",
+      "Santa Cruz",
+      "Buenos Aires",
+      "Mendoza"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 86,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué canal artificial conecta los océanos Atlántico y Pacífico en América Central?",
+    "opciones": [
+      "Canal de Suez",
+      "Canal de Panamá",
+      "Canal de la Mancha",
+      "Canal de Corinto"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 87,
+    "categoria": "Geografía",
+    "enunciado": "¿Cuál es la capital de Alemania?",
+    "opciones": [
+      "Múnich",
+      "Hamburgo",
+      "Fráncfort",
+      "Berlín"
+    ],
+    "respuestaCorrecta": 3,
+    "puntaje": 10
+  },
+  {
+    "id": 88,
+    "categoria": "Geografía",
+    "enunciado": "¿En qué continente se encuentra Nueva Zelanda?",
+    "opciones": [
+      "Asia",
+      "Oceanía",
+      "Europa",
+      "América"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 89,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué país tiene la mayor población del mundo en la actualidad?",
+    "opciones": [
+      "Estados Unidos",
+      "Indonesia",
+      "India",
+      "Brasil"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 90,
+    "categoria": "Geografía",
+    "enunciado": "¿Qué cadena montañosa sirve de límite natural entre Europa y Asia en Rusia?",
+    "opciones": [
+      "Los Pirineos",
+      "Los Cárpatos",
+      "Los Montes Urales",
+      "Los Apeninos"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 91,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué comando de Git envía los commits locales a un repositorio remoto?",
+    "opciones": [
+      "git pull",
+      "git push",
+      "git clone",
+      "git status"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 92,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué significan las siglas CSS?",
+    "opciones": [
+      "Computer Style Sheets",
+      "Cascading Style Sheets",
+      "Creative System Syntax",
+      "Code Style Structure"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 93,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué estructura de datos sigue el principio LIFO (último en entrar, primero en salir)?",
+    "opciones": [
+      "Cola (Queue)",
+      "Pila (Stack)",
+      "Lista enlazada",
+      "Árbol binario"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 94,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué código de estado HTTP indica que un recurso fue creado correctamente?",
+    "opciones": [
+      "200",
+      "201",
+      "400",
+      "404"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 95,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Para qué se utiliza principalmente el formato JSON en aplicaciones web?",
+    "opciones": [
+      "Compilar código binario",
+      "Intercambiar datos estructurados en formato de texto",
+      "Gestionar particiones de disco",
+      "Encriptar contraseñas"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 96,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué puerto utiliza por defecto el protocolo HTTPS?",
+    "opciones": [
+      "21",
+      "80",
+      "443",
+      "8080"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 97,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué operador lógico en JavaScript devuelve true solo si ambas condiciones son verdaderas?",
+    "opciones": [
+      "||",
+      "!",
+      "&&",
+      "??"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 98,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué es una API REST?",
+    "opciones": [
+      "Un sistema operativo para servidores",
+      "Una interfaz que permite comunicar sistemas mediante peticiones HTTP",
+      "Un editor de código fuente",
+      "Un tipo de memoria RAM"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
+  },
+  {
+    "id": 99,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué palabra clave en JavaScript declara una variable cuyo valor no puede ser reasignado?",
+    "opciones": [
+      "var",
+      "let",
+      "const",
+      "static"
+    ],
+    "respuestaCorrecta": 2,
+    "puntaje": 10
+  },
+  {
+    "id": 100,
+    "categoria": "Informática y programación",
+    "enunciado": "¿Qué herramienta es el estándar actual para el control de versiones de código fuente?",
+    "opciones": [
+      "Docker",
+      "Git",
+      "Nginx",
+      "Webpack"
+    ],
+    "respuestaCorrecta": 1,
+    "puntaje": 10
   }
 ]
